@@ -1,362 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* style.css */
 
-html, body {
-    height: 100%; 
-    margin: 0;
-}
-
+/* Estilos generales */
 body {
-    background-color: #000;
-    color: #eee;
-    font-family: Poppins;
-    font-size: 12px;
-    
-    
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('./image/theme3-background.jpg'); /* Cambia por la ruta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease; /* Transición para el cambio de fondo */
 }
 
 a {
     text-decoration: none;
 }
 
-header {
-    width: 1140px;
-    max-width: 80%;
-    margin: auto;
-    height: 100px;
+.logos {
+    position: fixed;
+    top: 10px; /* Espacio desde la parte superior */
+    left: 10px; /* Espacio desde la izquierda */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
     display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 100;
-    
+    justify-content: space-between;
+    width: calc(100% - 20px); /* Ajusta el ancho para que no se salga de la pantalla */
 }
 
-header a {
-    color: #eee;
-    margin-right: 5px;
-    padding: 5px 10px;
-    transition: 0.2s;
+.logos .upp {
+    display: inline-block;
 }
 
-a.active {
-    background: #14ff72cb;
-    border-radius: 2px;
+.logos img {
+    width: 50px; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
 
-header a:hover {
-    background: #14ff72cb;
-    border-radius: 2px;
+.content {
+    margin-top: 70px; /* Espacio para los logos */
+    padding: 10px;
+    overflow-y: auto; /* Permite desplazamiento vertical */
+    max-height: calc(100vh - 70px); /* Altura máxima para la lista */
 }
 
-nav {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
+.item {
+    background: white;
+    border-radius: 8px;
+    margin: 10px 0; /* Espacio entre los recuadros */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Para que las imágenes no se salgan */
 }
 
-.logo-container {
-    position: absolute; 
-    bottom: 10px; 
-    right: 10px; 
-}
-
-.logo {
-    position: absolute; 
-    top: 20px;
-    right: 20px; 
-    width: 100px; 
-    height: auto; 
-    z-index: 1000; 
-}
-.Milogo {
-    position: absolute; 
-    top: 20px;
-    left: 20px; 
-    width: 100px; 
-    height: auto; 
-    z-index: 1000; 
-}
-
-
-
-.slider {
-    height: 100vh;
-    width: 100vw;
-    overflow: auto;
-    position: relative;
-}
-
-.slider .list .item {
+.item img {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0 0 0 0;
+    border-radius: 8px 8px 0 0;
 }
 
-.slider .list .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.content .content {
+    padding: 15px;
 }
 
-.slider .list .item .content {
-    position: absolute;
-    top: 20%;
-    width: 1140px;
-    max-width: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-right: 50%;
-    
-    box-sizing: border-box;
-    color: #fff;
-    text-shadow: 0 5px 10px #0004;
-}
-
-.slider .list .item .content .title,
-.slider .list .item .content .type {
-    font-size: 5em;
+.title {
+    font-size: 1.5rem;
     font-weight: bold;
-    line-height: 1.3em;
 }
 
-.slider .list .item .type {
-    color: #14ff72cb;
-    
-}
-.slider .list .item .button{
-    display: grid;
-    grid-template-columns: repeat(2, 130px);
-    grid-template-rows: 40px;
-    gap: 5px;
-    margin-top: 20px;
-}
-.slider .list .item .button button{
-    border: none;
-    background-color: #eee;
-    font-family: Poppins;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.4s;
-    letter-spacing: 2px;
+.type {
+    font-size: 1.2rem;
+    color: gray;
 }
 
-
-.slider .list .item .button button:hover{
-    letter-spacing: 3px;
-}
-.slider .list .item .button button:nth-child(2){
-    background-color: transparent;
-    border: 1px solid #fff;
-    color: #eee;
+.description {
+    margin-top: 10px;
 }
 
-
-
-
-
-.thumbnail{
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    width: max-content;
-    z-index: 100;
-    display: flex;
-    gap: 20px;
-}
-
-.thumbnail .item{
-    width: 150px;
-    height: 220px;
-    flex-shrink: 0;
-    position: relative;
-}
-
-.thumbnail .item img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
-}
-
-
-
-.nextPrevArrows{
-    position: absolute;
-    top: 80%;
-    right: 52%;
-    z-index: 100;
-    width: 300px;
-    max-width: 50%;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-.nextPrevArrows button{
-    padding: 10px 20px;
-  text-transform: uppercase;
-  border-radius: 8px;
-  font-size: 50px;
-  font-weight: 500;
-  color: #05bcff;
-  text-shadow: none;
-  background: transparent;
-  cursor: pointer;
-  box-shadow: transparent;
-  border: 3px solid #ffffff30;
-  transition: 0.5s ease;
-  user-select: none;
-}
-.nextPrevArrows button:hover{
-    color: #424242;
-  background: #008cff;
-  border: 1px solid #008cff;
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-  box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
-    0 0 100px #008cff;
-}
-
-
-.slider .list .item:nth-child(1){
-    z-index: 1;
-}
-
-
-
-.slider .list .item:nth-child(1) .content .title,
-.slider .list .item:nth-child(1) .content .type,
-.slider .list .item:nth-child(1) .content .description,
-.slider .list .item:nth-child(1) .content .buttons
-{
-    transform: translateY(50px);
-    filter: blur(20px);
-    opacity: 0;
-    animation: showContent .5s 1s linear 1 forwards;
-    
-}
-@keyframes showContent{
-    to{
-        transform: translateY(0px);
-        filter: blur(0px);
-        opacity: 1;
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.2rem;
     }
-}
-.slider .list .item:nth-child(1) .content .title{
-    animation-delay: 0.4s !important;
-}
-.slider .list .item:nth-child(1) .content .type{
-    animation-delay: 0.6s !important;
-}
-.slider .list .item:nth-child(1) .content .description{
-    animation-delay: 0.8s !important;
-}
-.slider .list .item:nth-child(1) .content .buttons{
-    animation-delay: 1s !important;
-}
 
+    .type {
+        font-size: 1rem;
+    }
 
-
-
-.slider.next .list .item:nth-child(1) img{
-    width: 150px;
-    height: 220px;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    border-radius: 30px;
-    animation: showImage .5s linear 1 forwards;
-}
-
-@keyframes showImage{
-    to{
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
+    .description {
+        font-size: 1rem;
     }
 }
 
-.slider.next .thumbnail .item:nth-last-child(1){
-    overflow: hidden;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-.slider.prev .list .item img{
-    z-index: 100;
-}
-
-
-@keyframes showThumbnail{
-    from{
-        width: 0;
-        opacity: 0;
+/* Estilos para pantallas más grandes */
+@media (min-width: 769px) {
+    .item {
+        margin: 10px;
     }
-}
 
-
-.slider.next .thumbnail{
-    animation: effectNext .5s linear 1 forwards;
-}
-
-@keyframes effectNext{
-    from{
-        transform: translateX(150px);
-    }
-}
-
-
-
-.slider.prev .list .item:nth-child(2){
-    z-index: 2;
-}
-
-.slider.prev .list .item:nth-child(2) img{
-    animation: outFrame 0.5s linear 1 forwards;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-@keyframes outFrame{
-    to{
-        width: 150px;
-        height: 220px;
-        bottom: 50px;
-        left: 50%;
-        border-radius: 20px;
-    }
-}
-
-.slider.prev .thumbnail .item:nth-child(1){
-    overflow: hidden;
-    opacity: 0;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-.slider.next .nextPrevArrows button,
-.slider.prev .nextPrevArrows button{
-    pointer-events: none;
-}
-
-
-.slider.prev .list .item:nth-child(2) .content .title,
-.slider.prev .list .item:nth-child(2) .content .type,
-.slider.prev .list .item:nth-child(2) .content .description,
-.slider.prev .list .item:nth-child(2) .content .buttons
-{
-    animation: contentOut 1.5s linear 1 forwards!important;
-}
-
-@keyframes contentOut{
-    to{
-        transform: translateY(-150px);
-        filter: blur(20px);
-        opacity: 0;
-    }
-}
-@media screen and (max-width: 678px) {
-    .slider .list .item .content{
-        padding-right: 0;
-    }
-    .slider .list .item .content .title{
-        font-size: 50px;
+    .description {
+        font-size: 1.3rem;
     }
 }
