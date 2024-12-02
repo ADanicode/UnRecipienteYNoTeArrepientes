@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="theme3"> <!-- Establecemos la clase del tema inicial -->
+<body class="theme3"> 
     <div class="logos">
         <a href="https://adanicode.github.io/PortafolioADMC/portafolioA/index.html" class="upp" target="_blank">
             <img src="/p2/milogo.png" alt="" class="Milogo">
@@ -19,7 +19,7 @@
     </div>
 
     <div class="content">
-        <div class="item" data-theme="theme1">
+        <div class="item card" data-theme="theme1">
             <img src="./image/marita-kavelashvili-ugnrXk1129g-unsplash.jpg" alt="">
             <div class="content">
                 <div class="title">Responsabilidad Social</div>
@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="item" data-theme="theme2">
+        <div class="item card" data-theme="theme2">
             <img src="./image/vadim-sherbakov-NQSWvyVRIJk-unsplash.jpg" alt="">
             <div class="content">
                 <div class="title">#Un Recipiente y No Te Arrepientes</div>
@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <div class="item" data-theme="theme3">
+        <div class="item card" data-theme="theme3">
             <img src="./image/IMG_20241010_162607.HEIC" alt="">
             <div class="content">
                 <div class="title">Gracias!</div>
@@ -56,6 +56,29 @@
     </div>
 
     <script src="app.js"></script>
+    <script>
+        // Generar copos de nieve
+        const numberOfSnowflakes = 100; // Número de copos de nieve
+        const snowflakeContainer = document.body; // Contenedor para los copos de nieve
+    
+        for (let i = 0; i < numberOfSnowflakes; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄'; // Emoji de copo de nieve
+    
+            // Posicionar el copo de nieve en un lugar aleatorio
+            snowflake.style.left = Math.random() * 100 + 'vw'; // Posición horizontal aleatoria
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // Duración aleatoria de la animación
+            snowflake.style.opacity = Math.random(); // Opacidad aleatoria para un efecto más natural
+    
+            snowflakeContainer.appendChild(snowflake);
+    
+            // Eliminar el copo de nieve después de que cae
+            snowflake.addEventListener('animationend', () => {
+                snowflake.remove();
+            });
+        }
+    </script>
 </body>
 
 </html>
